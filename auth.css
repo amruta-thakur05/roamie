@@ -1,0 +1,42 @@
+/* Simple auth styles for login and registration pages */
+:root{
+  --primary-color: #2d6cdf; /* primary dark blue used across auth pages */
+  --bg-gradient-start: #f6f8ff;
+  --bg-gradient-end: #ffffff;
+  --card-shadow: rgba(20,30,80,0.08);
+}
+body.auth-page {
+  background: linear-gradient(120deg,var(--bg-gradient-start) 0%,var(--bg-gradient-end) 100%);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.auth-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px var(--card-shadow);
+  padding: 28px;
+}
+.auth-card h2 { margin: 0 0 12px; font-size: 22px; color:#223; }
+.auth-card p.sub { margin: 0 0 18px; color:#667; font-size:14px }
+.auth-card label { display:block; margin-top:10px; font-size:13px; color:#334; }
+.auth-card input[type="text"], .auth-card input[type="email"], .auth-card input[type="password"], .auth-card select {
+  width:100%; padding:10px 12px; margin-top:6px; border:1px solid #e3e7ef; border-radius:6px; box-sizing:border-box;
+}
+.auth-card button { margin-top:16px; width:100%; padding:12px; background:var(--primary-color); color:#fff; border:none; border-radius:6px; cursor:pointer; font-weight:600; }
+.auth-card .small { font-size:13px; color:#556; margin-top:10px; }
+.auth-card .small a { color:var(--primary-color); font-weight:700; text-decoration:none; }
+.auth-card a { color:var(--primary-color); }
+.auth-card .error { color:#b00020; margin-top:10px; }
+.auth-card .success { color:#1a8a3d; margin-top:10px; }
+
+@media (max-width:480px){ .auth-card{ padding:20px; } }

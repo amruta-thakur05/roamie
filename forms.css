@@ -1,0 +1,80 @@
+/* Forms and small page layouts for Add Listing / Add Booking */
+:root{
+    --form-bg: #ffffff;
+    --accent: #2d6cdf;
+    --muted: #6b7280;
+    --border: #e6e9ee;
+    --radius: 10px;
+}
+
+body .form-card{
+    background: var(--form-bg);
+    max-width: 840px;
+    margin: 0 auto 40px;
+    padding: 28px;
+    border-radius: var(--radius);
+    box-shadow: 0 8px 30px rgba(18,38,63,0.06);
+}
+
+.form-heading{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    margin-bottom:18px;
+}
+
+.form-heading h1{
+    font-size:22px;
+    color:#0f172a;
+    margin:0;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:16px;
+}
+
+.form-row{ display:flex; flex-direction:column; }
+.form-label{ font-size:13px; color:var(--muted); margin-bottom:8px; font-weight:600; }
+
+.form-control, .form-control:focus{
+    display:block;
+    box-sizing:border-box;
+    width:100%;
+    padding:10px 12px;
+    border-radius:8px;
+    border:1px solid var(--border);
+    outline:none;
+    font-size:15px;
+    color:#0b1220;
+    background:linear-gradient(180deg, #ffffff, #fcfdff);
+}
+
+/* Ensure the grid and rows apply inside form-card only (avoid global overrides) */
+.form-card .form-grid{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:16px;
+}
+.form-card .form-row{ display:flex; flex-direction:column; }
+
+textarea.form-control{ min-height:120px; resize:vertical; }
+
+.form-actions{
+    display:flex;
+    gap:12px;
+    align-items:center;
+    margin-top:18px;
+}
+
+.btn-primary{ background:var(--accent); color:white; padding:11px 18px; border-radius:8px; border:none; cursor:pointer; font-weight:700; }
+.btn-primary:hover{ transform:translateY(-2px); box-shadow:0 8px 30px rgba(45,108,223,0.15); }
+
+.btn-secondary{ background:#f5f7fb; color:#0b1220; padding:11px 18px; border-radius:8px; border:1px solid var(--border); cursor:pointer; }
+
+.helper{ font-size:13px; color:var(--muted); margin-top:6px; }
+
+/* Responsive */
+@media (max-width: 900px){ .form-grid{ grid-template-columns: 1fr; } .form-card{ padding:20px; } }
